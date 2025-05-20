@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaishnavi Ventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Global styles */
+    :root {
+      --primary-color: #8B3A3A; /* Rich Rajasthani red */
+      --secondary-color: #D4AF37; /* Antique gold */
+      --bg-color: #F7F2E4; /* Aged parchment */
+      --dark-color: #362C28; /* Dark wood */
+      --light-color: #F9F6EF; /* Light cream */
+      --accent-color: #C9772B; /* Terracotta */
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    /* Decorative elements */
+    .rajasthani-border {
+      border: 8px solid transparent;
+      border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'%3E%3Cg fill='none' stroke='%238B3A3A' stroke-width='2'%3E%3Cpath d='M1,1 L74,1 L74,74 L1,74 L1,1 Z'/%3E%3Cpath d='M8,8 L67,8 L67,67 L8,67 L8,8 Z'/%3E%3Cpath d='M1,1 L8,8 M74,1 L67,8 M1,74 L8,67 M74,74 L67,67'/%3E%3Ccircle cx='37.5' cy='7.5' r='2.5'/%3E%3Ccircle cx='37.5' cy='67.5' r='2.5'/%3E%3Ccircle cx='7.5' cy='37.5' r='2.5'/%3E%3Ccircle cx='67.5' cy='37.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E") 25 stretch;
+      padding: 15px;
+    }
+    
+    .antique-shadow {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15), 0 8px 25px rgba(139, 58, 58, 0.1);
+    }
+    
+    /* Header & Navigation */
+    header {
+      background-color: var(--dark-color);
+      padding: 20px 0 0 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 20px;
+      background-color: rgba(54, 44, 40, 0.7);
+    }
+    
+    header .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+    }
+    
+    header nav {
+      margin-top: 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 15px 0;
+    }
+    
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+    
+    header nav ul li {
+      margin: 0 20px;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+    
+    header nav ul li a {
+      color: var(--secondary-color);
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    header nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width 0.3s ease;
+    }
+    
+    header nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      filter: brightness(0.7);
+    }
+    
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      color: var(--light-color);
+      text-align: center;
+      max-width: 800px;
+      padding: 30px;
+    }
+    
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero-text p {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      padding: 12px 30px;
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid var(--secondary-color);
+    }
+    
+    .hero-btn:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary-color);
+    }
+    
+    .section-title::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+    }
+
+    /* Content Sections */
+    section {
+      margin: 60px 0;
+      position: relative;
+    }
+    
+    section.fancy-bg {
+      background-color: var(--light-color);
+      padding: 60px 0;
+      position: relative;
+    }
+    
+    section.fancy-bg::before,
+    section.fancy-bg::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath fill='%23F7F2E4' d='M0 10 L50 0 L100 10 Z' /%3E%3C/svg%3E");
+    }
+    
+    section.fancy-bg::before {
+      top: -30px;
+    }
+    
+    section.fancy-bg::after {
+      bottom: -30px;
+      transform: rotate(180deg);
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-image {
+      flex: 1;
+      position: relative;
+      padding: 10px;
+      border: 1px solid var(--secondary-color);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      border: 1px solid var(--secondary-color);
+      z-index: -1;
+    }
+    
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-card {
+      background-color: var(--light-color);
+      border-radius: 0;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+      border: 1px solid var(--secondary-color);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .service-card .image-container {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .service-content {
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .service-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    
+    .service-content p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    
+    .service-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-btn:hover {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+    }
+
+    /* Contact Form */
+    .contact-section {
+      position: relative;
+      padding: 60px 0;
+      background-color: var(--dark-color);
+      color: var(--light-color);
+    }
+    
+    .contact-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      flex: 1;
+    }
+    
+    .contact-info h3 {
+      color: var(--secondary-color);
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    
+    .contact-detail {
+      margin-bottom: 25px;
+    }
+    
+    .contact-detail h4 {
+      color: var(--secondary-color);
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+    
+    .contact-form-container {
+      flex: 2;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--light-color);
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--secondary-color);
+      outline: none;
+    }
+    
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .contact-form button {
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid transparent;
+    }
+    
+    .contact-form button:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      padding: 20px 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    .social-icons {
+      margin-bottom: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid var(--secondary-color);
+      color: var(--secondary-color);
+      margin: 0 5px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+    }
+    
+    .footer-nav {
+      margin: 15px 0;
+    }
+    
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 15px;
+      font-size: 0.9rem;
+    }
+    
+    .footer-nav a:hover {
+      color: var(--secondary-color);
+    }
+    
+    .separator {
+      display: inline-block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.3);
+      margin: 15px auto;
+    }
+    
+    /* Decorative elements */
+    .rajasthani-motif {
+      width: 80px;
+      height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M50,5 L50,95 M5,50 L95,50 M22,22 L78,78 M22,78 L78,22' stroke='%23D4AF37' stroke-width='2' fill='none'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23D4AF37'/%3E%3C/svg%3E");
+      position: absolute;
+      opacity: 0.2;
+    }
+    
+    @media (max-width: 992px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header nav ul {
+        flex-direction: column;
+      }
+      
+      header nav ul li {
+        margin: 10px 0;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-content">
+      <div class="container">
+        <img src="images/logo.png" alt="Jaishnavi Ventures Logo" class="logo">
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <!-- You can add your hero image here -->
+    </div>
+    <div class="hero-text">
+      <h1>Jaishnavi Ventures</h1>
+      <p>Crafting Spaces, Creating Value with Rajasthani Elegance</p>
+      <a href="#services" class="hero-btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="fancy-bg">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>At Jaishnavi Ventures, we merge classic Rajasthani elegance with modern sensibility to transform your spaces into timeless environments. Our designs draw inspiration from the rich heritage of Rajasthan - from the intricate jharokhas of Jaisalmer to the opulent palaces of Udaipur.</p>
+          <p>With decades of experience in interior design, architecture, and real estate, our passionate team brings your vision to life while honoring the cultural traditions that make Rajasthani design so distinctive. We believe in creating spaces that tell a story - your story - with the authenticity and warmth that only hand-crafted excellence can provide.</p>
+        </div>
+        <div class="about-image">
+          <!-- You can add your about image here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card antique-shadow">
+          <div class="image-container">
+            <!-- You can add your interior design image here -->
+          </div>
+          <div class="service-content">
+            <h3>Interior Design</h3>
+            <p>Luxury interior styling with authentic Rajasthani elements, from hand-carved furniture to traditional motifs and color palettes that evoke the royal heritage of Rajasthan.</p>
+            <a href="/services/interior" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="service-card antique-shadow">
+          <div class="image-container">
+            <!-- You can add your real estate image here -->
+          </div>
+          <div class="service-content">
+            <h3>Real Estate</h3>
+            <p>Premium property services specializing in heritage homes and properties with cultural significance, curated for discerning clients who appreciate historical value.</p>
+            <a href="/services/real-estate" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="service-card antique-shadow">
+          <div class="image-container">
+            <!-- You can add your architecture image here -->
+          </div>
+          <div class="service-content">
+            <h3>Architecture</h3>
+            <p>Innovative architectural solutions that seamlessly blend traditional Rajasthani elements like jharokhas, jaalis, and courtyards with modern functionality.</p>
+            <a href="/services/architecture" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title" style="color: var(--secondary-color);">Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>We'd love to hear about your project and how we can help bring your vision to life with our unique Rajasthani-inspired design approach.</p>
+          
+          <div class="contact-detail">
+            <h4>Address</h4>
+            <p>123 Heritage Lane, Jaipur, Rajasthan, India</p>
+          </div>
+          
+          <div class="contact-detail">
+            <h4>Email</h4>
+            <p>info@jaishnaviventures.com</p>
+          </div>
+          
+          <div class="contact-detail">
+            <h4>Phone</h4>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+        
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="#"><span>FB</span></a>
+        <a href="#"><span>IG</span></a>
+        <a href="#"><span>TW</span></a>
+        <a href="#"><span>PT</span></a>
+      </div>
+      
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <p>&copy; 2025 Jaishnavi Ventures. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
