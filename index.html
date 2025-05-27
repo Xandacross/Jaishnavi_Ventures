@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Global styles */
     :root {
@@ -50,6 +51,26 @@
       padding: 40px 0;
     }
 
+    .contact-section {
+  position: relative;
+  padding: 60px 0;
+  background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%), 
+              radial-gradient(circle at 70% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+              var(--dark-color);
+  color: var(--light-color);
+  margin-bottom: 0;
+  background-image:none;
+}
+
+   footer {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1a237e 100%);
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  border-top: none;
+  margin-top: 0;
+  background-image: none;
+}
     /* Decorative elements */
     .rajasthani-border {
       border: 8px solid transparent;
@@ -323,15 +344,16 @@
     
     .team-profiles {
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 40px;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 800px;
+      margin: 40px auto 0;
     }
     
     .profile-card {
-      text-align: center;
-      max-width: 250px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
       background-color: rgba(255, 255, 255, 0.6);
       padding: 25px;
       border: 1px solid var(--secondary-color);
@@ -355,10 +377,10 @@
     }
     
     .profile-image {
+      flex-shrink: 0;
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      margin: 0 auto 20px;
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       display: flex;
       align-items: center;
@@ -368,6 +390,10 @@
       font-family: 'Cinzel', serif;
       border: 3px solid var(--secondary-color);
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .profile-info {
+      flex-grow: 1;
     }
     
     .profile-name {
@@ -386,8 +412,8 @@
     }
     
     .profile-description {
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      line-height: 1.6;
       color: var(--dark-color);
     }
     
@@ -510,7 +536,7 @@
     
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
+      width: calc(100% - 32px);
       padding: 12px 15px;
       margin-bottom: 20px;
       background-color: rgba(255, 255, 255, 0.1);
@@ -518,18 +544,19 @@
       color: var(--light-color);
       font-family: 'Libre Baskerville', serif;
       transition: all 0.3s ease;
-    }
-    
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-color: var(--secondary-color);
-      outline: none;
+      box-sizing: border-box;
     }
     
     .contact-form input::placeholder,
     .contact-form textarea::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    outline: none;
     }
     
     .contact-form button {
@@ -558,7 +585,8 @@
       padding: 20px 0;
       text-align: center;
       color: rgba(255, 255, 255, 0.7);
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-top: none;
+      margin-top: 0;
     }
     
     .social-icons {
@@ -640,6 +668,16 @@
       .services-grid {
         grid-template-columns: 1fr;
       }
+      
+      .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .profile-info {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -648,7 +686,7 @@
   <header>
     <div class="header-content">
       <div class="container">
-        <img src="images/logo.png" alt="Jaishnavi Ventures Logo" class="logo">
+        <img src="Screenshot 2025-05-27 072533.png" alt="Jaishnavi Ventures Logo" class="logo">
         <nav>
           <ul>
             <li><a href="#home">Home</a></li>
@@ -696,23 +734,29 @@
         <div class="team-profiles">
           <div class="profile-card">
             <div class="profile-image">AK</div>
-            <h4 class="profile-name">Arjun Khanna</h4>
-            <p class="profile-title">Lead Architect</p>
-            <p class="profile-description">Master of traditional Rajasthani architecture with modern innovations. Specializes in heritage restoration and contemporary palace designs.</p>
+            <div class="profile-info">
+              <h4 class="profile-name">Arjun Khanna</h4>
+              <p class="profile-title">Lead Architect</p>
+              <p class="profile-description">Master of traditional Rajasthani architecture with modern innovations. Specializes in heritage restoration and contemporary palace designs. With over 15 years of experience, Arjun has worked on numerous heritage projects across Rajasthan, blending traditional techniques with modern functionality.</p>
+            </div>
           </div>
           
           <div class="profile-card">
             <div class="profile-image">PS</div>
-            <h4 class="profile-name">Priya Sharma</h4>
-            <p class="profile-title">Interior Design Director</p>
-            <p class="profile-description">Expert in luxury interiors and authentic Rajasthani craftsmanship. Creates spaces that blend royal elegance with contemporary comfort.</p>
+            <div class="profile-info">
+              <h4 class="profile-name">Priya Sharma</h4>
+              <p class="profile-title">Interior Design Director</p>
+              <p class="profile-description">Expert in luxury interiors and authentic Rajasthani craftsmanship. Creates spaces that blend royal elegance with contemporary comfort. Priya's designs have been featured in several international design magazines, and she's known for her innovative use of traditional textiles and motifs in modern settings.</p>
+            </div>
           </div>
           
           <div class="profile-card">
             <div class="profile-image">RJ</div>
-            <h4 class="profile-name">Rajesh Jain</h4>
-            <p class="profile-title">Real Estate Consultant</p>
-            <p class="profile-description">Specialist in heritage properties and premium real estate. Deep knowledge of Rajasthan's architectural heritage and property values.</p>
+            <div class="profile-info">
+              <h4 class="profile-name">Rajesh Jain</h4>
+              <p class="profile-title">Real Estate Consultant</p>
+              <p class="profile-description">Specialist in heritage properties and premium real estate. Deep knowledge of Rajasthan's architectural heritage and property values. Rajesh has helped numerous clients find and restore heritage properties, ensuring their historical value is preserved while making them suitable for modern living.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -802,10 +846,10 @@
   <footer>
     <div class="container">
       <div class="social-icons">
-        <a href="#"><span>FB</span></a>
-        <a href="#"><span>IG</span></a>
-        <a href="#"><span>TW</span></a>
-        <a href="#"><span>PT</span></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
       
       <div class="footer-nav">
